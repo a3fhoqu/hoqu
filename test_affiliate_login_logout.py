@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
-import unittest, time, re
+import unittest
 
 class UntitledTestCase(unittest.TestCase):
     def setUp(self):
@@ -23,6 +20,8 @@ class UntitledTestCase(unittest.TestCase):
         wd.find_element_by_name("password").send_keys("a0b0c0d0ef")
         wd.find_element_by_xpath("//div[@id='app']/div[2]/section/div/div/div/form/button/span/b").click()
         wd.find_element_by_xpath("//div[@id='application']/div/div[5]/a/div/div/div/span").click()
+        wd.find_element_by_xpath("//div[@id='application']/header/div[2]/button/span/div").click()
+        wd.find_element_by_xpath("//li[2]/span").click()
     
     def is_element_present(self, how, what):
         try: self.wd.find_element(by=how, value=what)
